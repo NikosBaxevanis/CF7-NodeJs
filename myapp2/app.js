@@ -7,11 +7,20 @@ app.use(express.urlencoded({extended:true}))
 
 app.use('/',express.static('files')); //οταν θα δει μια κλιση στο Localhost, τοτε θα ερθει να τρεξει μια διαδικασια η οποια θα τρεξει τα στατικα αρχεια (html) μεσα στο φακελο files
 
+const logger = (req,res,next) => {
+    let url = req.url;
+    console.log("Logger" , req.body);
+    let time = new Date();
+    console.log('Received requests for ' + url + ' at ' + time)
+
+    next()
+}
+
 app.get('/',(req,res)=>{
     res.send("This is the Home Page")
 })
 
-app.post('/user', (req,res)=>{
+app.post('/user',logger,(req,res)=>{
     let data = req.body;
     let username = req.body.username;
     let email = req.body.email;
