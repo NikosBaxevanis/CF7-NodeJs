@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const request = require('supertest');
 const app = require('../app')
+const authService = require('../services/auth.service')
 
 require('dotenv').config();
 
@@ -22,10 +23,22 @@ afterEach( async ()=> {
 })
 
 describe("Requests for api/users" ,() => {
+
+    let token;
+    beforeAll(()=> {
+        user = {
+            username: "admin",
+            email: "admin@aueb.gr",
+            roles: ["EDITOR", "READER","ADMIN"]
+        };
+        token = authService.generateAccessToken(user)
+    })
+
     it("GET Returns all users", async ()=> {
 
         const res = await request(app)
-        .get('/api/users');
+        .get('/api/users')
+        .set('Authorization', `Bearer ${token}`)
 
     expect(res.statusCode).toBe(200)
     expect(res.body.status).toBeTruthy();

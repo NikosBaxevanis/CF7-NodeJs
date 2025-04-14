@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">10% </span>
+                <span class="strong">43.33% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3/30</span>
+                <span class='fraction'>13/30</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>2/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">10% </span>
+                <span class="strong">43.33% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3/30</span>
+                <span class='fraction'>13/30</span>
             </div>
         
             
@@ -130,28 +130,28 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -190,30 +190,30 @@
 <span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">const jwt = require('jsonwebtoken');
 const { OAuth2Client } = require('google-auth-library')
 &nbsp;
-function <span class="fstat-no" title="function not covered" >generateAccessToken(</span>user){
+function generateAccessToken(user){
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  console.log("Auth Service", user);</span>
+  console.log("Auth Service", user);
 &nbsp;
-  const payload = <span class="cstat-no" title="statement not covered" >{</span>
+  const payload = {
     username: user.username,
     email: user.email,
     roles: user.roles
   }
 &nbsp;
-  const secret = <span class="cstat-no" title="statement not covered" >process.env.TOKEN_SECRET;</span>
-  const options = <span class="cstat-no" title="statement not covered" >{ expiresIn: '1h'};</span>
+  const secret = process.env.TOKEN_SECRET;
+  const options = { expiresIn: '1h'};
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return jwt.sign(payload, secret, options);</span>
+  return jwt.sign(payload, secret, options);
 }
 &nbsp;
-function <span class="fstat-no" title="function not covered" >verifyAccessToken(</span>token){
-  const secret = <span class="cstat-no" title="statement not covered" >process.env.TOKEN_SECRET;</span>
+function verifyAccessToken(token){
+  const secret = process.env.TOKEN_SECRET;
   
-<span class="cstat-no" title="statement not covered" >  try {</span>
-    const payload = <span class="cstat-no" title="statement not covered" >jwt.verify(token, secret);</span>
+  try {
+    const payload = jwt.verify(token, secret);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    console.log("VerifyToken", payload);</span>
-<span class="cstat-no" title="statement not covered" >    return { verified: true, data: payload }</span>
+    console.log("VerifyToken", payload);
+    return { verified: true, data: payload }
   } catch (err) {
 <span class="cstat-no" title="statement not covered" >    return { verified: false, data: err.message }</span>
   }
@@ -256,7 +256,7 @@ module.exports = { generateAccessToken, verifyAccessToken, googleAuth }</pre></t
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-04-14T16:26:50.189Z
+                at 2025-04-14T17:00:49.980Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
