@@ -42,4 +42,4 @@
 {"label":"MY LABEL FOR PRODUCTS APP","level":"warn","message":"Success in reading all users","timestamp":"08-04-2025 20:44:3232"}
 {"label":"MY LABEL FOR PRODUCTS APP","level":"error","message":"Message with error","timestamp":"08-04-2025 20:44:3232"}
 {"label":"MY LABEL FOR PRODUCTS APP","level":"warn","message":"Success in reading all users","timestamp":"08-04-2025 20:53:4949"}
-{"label":"MY LABEL FOR PRODUCTS APP","level":"error","message":"Message with error","timestamp":"08-04-2025 20:53:4949"}
+{"label":"MY LABEL FOR PRODUCTS APP","level":"error","message":"Message with error","timestamp":"08-04-2025 20:53:4949"}{"label":"MY LABEL FOR PRODUCTS APP","level":"error","message":"Error, Problem in reading all users Operation `users.find()` buffering timed out after 10000ms","stack":"MongooseError: Operation `users.find()` buffering timed out after 10000ms\n    at Timeout.<anonymous> (C:\\Users\\Nikos\\Desktop\\CF7-NodeJs\\usersApp\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\collection.js:187:23)\n    at listOnTimeout (node:internal/timers:594:17)\n    at processTimers (node:internal/timers:529:7)","timestamp":"14-04-2025 19:16:2525"}
