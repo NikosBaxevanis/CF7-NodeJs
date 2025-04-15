@@ -1,0 +1,13 @@
+# version of node to use
+FROM node:22
+# Directory to save image
+WORKDIR /app
+# Install all dependencies
+COPY packag*.json ./
+RUN npm install
+# Bundle app source
+COPY . .
+# Port
+EXPOSE 3000
+# Start server
+CMD ["npm","run","start"]
